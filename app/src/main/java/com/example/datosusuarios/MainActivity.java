@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     // declarar
     Button send;
     Intent datosUsuario;
+    EditText nombre;
 
 
     @Override
@@ -31,14 +33,29 @@ public class MainActivity extends AppCompatActivity {
 
         // referenciar
         send = findViewById(R.id.button);
+        nombre = findViewById(R.id.editTextText);
+
         datosUsuario = getIntent();
+
 
         // cambio vista
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent datosUsuario = new Intent(MainActivity.this,MostrarDatos.class);
+                String s=nombre.getText().toString();
+                // Pasaremos de la actividad actual a OtraActivity
+                Intent datosUsuario = new Intent(MainActivity.this, MainActivity2.class);
+
+                //intent.putExtra("keyName", value);  // pass your values and retrieve them in the other Activity using keyName
+
+                //datosUsuario.putExtra("variable_integer", objeto.getId());
+                //datosUsuario.putExtra("variable_string", nombre.getNombre());
+                datosUsuario.putExtra("variable_string", s);
+                //datosUsuario.putExtra("objeto_float", objeto.getPrecio());
                 startActivity(datosUsuario);
+
+                // Intent datosUsuario = new Intent(MainActivity.this,MostrarDatos.class);
+                // startActivity(datosUsuario);
             }
         });
     }
