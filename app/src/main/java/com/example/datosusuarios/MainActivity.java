@@ -13,9 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // referenciar
+    // declarar
     Button send;
-    // declara intent para enviar datos
     Intent datosUsuario;
 
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // referenciar
         send = findViewById(R.id.button);
         datosUsuario = getIntent();
 
