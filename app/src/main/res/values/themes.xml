@@ -5,5 +5,12 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <!-- crear nuevo tema -->
+    <style name="nuevo_theme" >
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorSecondary">@color/design_default_color_surface</item>
+
+    </style>
+
     <style name="Theme.DatosUsuarios" parent="Base.Theme.DatosUsuarios" />
 </resources>
