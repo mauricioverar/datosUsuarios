@@ -14,7 +14,8 @@ public class MainActivity2 extends AppCompatActivity {
 
     //
     //private TextView Textv;
-    TextView Textv;
+    TextView Textvname;
+    TextView Textvlast;
 
     //
     @Override
@@ -29,7 +30,8 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
         //
-        Textv = findViewById(R.id.tv2);
+        Textvname = findViewById(R.id.tvname);
+        Textvlast = findViewById(R.id.tvlast);
         //Textv = findViewById(R.id.tv2);
 
         Intent iin= getIntent();
@@ -42,7 +44,11 @@ public class MainActivity2 extends AppCompatActivity {
         if(b!=null)
         {
             String j =(String) b.get("variable_string");
-            Textv.setText(j);
+            String k =(String) b.get("variable_string2");
+            Textvname.setText(j);
+            Textvlast.setText(k);
+            //Textvname.setText(i);
+            //Textvlast.setText(j);
         }
         //
         // String recuperamos_variable_string = getIntent().getStringExtra("variable_string");

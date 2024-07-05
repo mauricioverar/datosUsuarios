@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button send;
     Intent datosUsuario;
     EditText nombre;
+    EditText apellido;
 
 
     @Override
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         // referenciar
         send = findViewById(R.id.button);
-        nombre = findViewById(R.id.editTextText);
+        nombre = findViewById(R.id.editTextName);
+        apellido = findViewById(R.id.editTextLast);
 
         datosUsuario = getIntent();
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s=nombre.getText().toString();
+                String s2=apellido.getText().toString();
                 // Pasaremos de la actividad actual a OtraActivity
                 Intent datosUsuario = new Intent(MainActivity.this, MainActivity2.class);
 
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 //datosUsuario.putExtra("variable_integer", objeto.getId());
                 //datosUsuario.putExtra("variable_string", nombre.getNombre());
                 datosUsuario.putExtra("variable_string", s);
+                datosUsuario.putExtra("variable_string2", s2);
                 //datosUsuario.putExtra("objeto_float", objeto.getPrecio());
                 startActivity(datosUsuario);
 
